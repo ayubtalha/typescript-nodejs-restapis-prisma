@@ -7,6 +7,8 @@ import { AppService } from './app.service';
 import { join } from 'path';
 import { PrismaService } from './prisma.service';
 import { CustomerModule } from './customer/customer.module';
+import { PrismaModule } from './prisma/prisma.module';
+import { CustomersModule } from './customers/customers.module';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { CustomerModule } from './customer/customer.module';
       playground: true,
       introspection: true, // TODO update this so that it's off in production;
     }),
+    PrismaModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
