@@ -9,6 +9,7 @@ import { PrismaService } from './prisma.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { CustomersModule } from './customers/customers.module';
 import { CustomerResolver } from './customers/customer.resolver';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { CustomerResolver } from './customers/customer.resolver';
     }),
     PrismaModule,
     CustomersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService, CustomerResolver],
