@@ -10,6 +10,11 @@ export class CreateCustomerDto {
   @ApiProperty()
   password: string;
 
-  // @ApiProperty({ required: false, default: false })
-  // id?: string = false;
+  @ApiProperty()
+  readonly role: CustomerRole;
+}
+
+enum CustomerRole {
+  USER = 'USER',
+  ADMIN = 'ADMIN',
 }

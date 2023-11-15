@@ -12,9 +12,15 @@ datasource db {
 }
 
 model Customer {
-  id        String   @id @unique @default(uuid())
-  email     String   @unique
+  id        String       @id @unique @default(uuid())
+  email     String       @unique
+  role      CustomerRole @default(USER)
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+enum CustomerRole {
+  USER
+  ADMIN
 }

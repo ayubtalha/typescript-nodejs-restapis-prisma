@@ -8,7 +8,7 @@ import { LoginDto, RefreshTokenDto } from './dto/login.dto';
 @ApiTags('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
-  @Post('accessToken')
+  @Post('login/accessToken')
   @ApiOkResponse({ type: AuthEntity })
   accessToken(@Body() { email, password }: LoginDto) {
     return this.authService.accessToken(email, password);
